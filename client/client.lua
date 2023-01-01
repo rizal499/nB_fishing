@@ -50,6 +50,50 @@ if Config.sellShop.enabled then
     end)
 end
 
+if Config.sellShark.enabled then
+    CreateThread(function()
+        local ped, pedSpawned
+        local textUI
+        while true do
+            local sleep = 1500
+            local playerPed = cache.ped
+            local coords = GetEntityCoords(playerPed)
+            local dist = #(coords - Config.sellShark.coords)
+            if dist <= 30 and not pedSpawned then
+                lib.requestAnimDict('mini@strip_club@idles@bouncer@base', 100)
+                lib.requestModel(Config.sellShark.ped, 100)
+                ped = CreatePed(28, Config.sellShark.ped, Config.sellShark.coords.x, Config.sellShark.coords.y, Config.sellShark.coords.z, Config.sellShark.heading, false, false)
+                FreezeEntityPosition(ped, true)
+                SetEntityInvincible(ped, true)
+                SetBlockingOfNonTemporaryEvents(ped, true)
+                TaskPlayAnim(ped, 'mini@strip_club@idles@bouncer@base', 'base', 8.0, 0.0, -1, 1, 0, 0, 0, 0)
+                pedSpawned = true
+            elseif dist <= 1.8 and pedSpawned then
+                sleep = 0
+                if not textUI then
+                    lib.showTextUI('[E] - Jual Ikan Hiu')
+                    textUI = true
+                end
+                if IsControlJustReleased(0, 38) then
+                    FishingSellShark()
+                end
+            elseif dist >= 1.9 and textUI then
+                sleep = 0
+                lib.hideTextUI()
+                textUI = nil
+            elseif dist >= 31 and pedSpawned then
+                local model = GetEntityModel(ped)
+                SetModelAsNoLongerNeeded(model)
+                DeletePed(ped)
+                SetPedAsNoLongerNeeded(ped)
+                RemoveAnimDict('mini@strip_club@idles@bouncer@base')
+                pedSpawned = nil
+            end
+            Wait(sleep)
+        end
+    end)
+end
+
 RegisterNetEvent('wasabi_fishing:startFishing')
 AddEventHandler('wasabi_fishing:startFishing', function()
     if IsPedInAnyVehicle(cache.ped) or IsPedSwimming(cache.ped) then
@@ -118,6 +162,19 @@ AddEventHandler('wasabi_fishing:startFishing', function()
     else
         TriggerEvent('wasabi_fishing:notify', Strings.no_bait, Strings.no_bait_desc, 'error')
     end
+end)
+
+RegisterNetEvent('wasabi_fishing:spawnPed')
+AddEventHandler('wasabi_fishing:spawnPed', function()
+
+	RequestModel( GetHashKey( "A_C_SharkTiger" ) )
+		while ( not HasModelLoaded( GetHashKey( "A_C_SharkTiger" ) ) ) do
+			Citizen.Wait( 5 )
+		end
+	local pos = GetEntityCoords(PlayerPedId())
+
+	local ped = CreatePed(29, 0x06C3F072, pos.x, pos.y, pos.z, 90.0, true, false)
+	SetEntityHealth(ped, 0)
 end)
 
 RegisterNetEvent('wasabi_fishing:interupt')
