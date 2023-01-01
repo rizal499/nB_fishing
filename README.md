@@ -32,10 +32,10 @@ ESX fishing script with reward shark and sell it to black money
 
 - If using limit system for inventory please set Old ESX config to true otherwise put false
 
-- Add `ensure wasabi_fishing` in your `server.cfg` (*After* dependencies)
+- Add `ensure nB_fishing` in your `server.cfg` (*After* dependencies)
 
 ### Extra Information
-- Make sure `ox_lib` starts before `wasabi_fishing`
+- Make sure `ox_lib` starts before `nB_fishing`
 - Inventory images included in the `InventoryImages` directory
 - You must add the item `fishingrod` and `fishbait` to one of your in-game shops or have a place for your players to obtain.
 
