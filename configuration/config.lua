@@ -41,7 +41,7 @@ Config.fish = {
     { item = 'tuna', price = {300, 550}, difficulty = {'medium', 'easy', 'easy'} }, -- name is the item name of the fish(must be in DB of items) / Price is the range of price it will sell to fish buyer / difficulty is how many & how hard skillcheck is
     { item = 'salmon', price = {235, 300}, difficulty = {'medium', 'easy'} },
     { item = 'trout', price = {190, 235}, difficulty = {'easy', 'easy'} },
-    { item = 'teri', price = {100, 190}, difficulty = {'easy'} },
+    { item = 'anchovy', price = {100, 190}, difficulty = {'easy'} },
     { item = 'shark', price = {100, 190}, difficulty = {'medium', 'easy', 'easy', 'medium'} },
 }
 
