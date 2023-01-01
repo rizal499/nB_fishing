@@ -30,8 +30,6 @@ ESX fishing script with reward shark and sell it to black money
 
 - Put script in your `resources` directory
 
-- If using limit system for inventory please set Old ESX config to true otherwise put false
-
 - Add `ensure nB_fishing` in your `server.cfg` (*After* dependencies)
 
 ### Extra Information
