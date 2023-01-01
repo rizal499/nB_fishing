@@ -19,7 +19,7 @@ Config.sellShark = {
     enabled = true,
     coords = vec3(5133.04, -4619.81, 2.21-1.0), -- X, Y, Z Coords of where fish buyer will spawn
     heading = 166.43, -- Heading of fish buyer ped
-    ped = 'ig_yeager' -- Ped name here
+    ped = 'a_m_m_hillbilly_01' -- Ped name here
 }
 
 Config.bait = {
