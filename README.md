@@ -1,6 +1,7 @@
 # wasabi_fishing
 
 This resource was forked from wasabi_fishing as a free interactive fishing script for ESX servers.
+ESX fishing script with reward shark and sell it to black money
 
 ## Features
 - Optimized 0.00ms usage on idle
