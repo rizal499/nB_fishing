@@ -34,3 +34,16 @@ end
 FishingSellItems = function()
 	TriggerServerEvent('wasabi_fishing:sellFish')
 end
+
+FishingSellShark = function()
+    local ped = PlayerPedId()
+    local playerCoords = GetEntityCoords(ped)
+	TriggerServerEvent('wasabi_fishing:sellShark')
+    if math.random(1, 100) < 50 then -- 50% change to call cops.
+        TriggerServerEvent('esx_outlawalert:sellSharkInProgress', {
+            x = ESX.Math.Round(playerCoords.x, 1),
+            y = ESX.Math.Round(playerCoords.y, 1),
+            z = ESX.Math.Round(playerCoords.z, 1)
+        }, streetName, playerGender)
+    end
+end
