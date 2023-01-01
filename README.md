@@ -1,6 +1,6 @@
 # wasabi_fishing
 
-This resource was created as a free interactive fishing script for ESX servers.
+This resource was forked from wasabi_fishing as a free interactive fishing script for ESX servers.
 
 ## Features
 - Optimized 0.00ms usage on idle
@@ -18,6 +18,7 @@ This resource was created as a free interactive fishing script for ESX servers.
 ## Dependencies
 - es_extended
 - ox_lib - https://github.com/overextended/ox_lib/releases
+- danny3_outlawalert
 
 
 ## Installation
