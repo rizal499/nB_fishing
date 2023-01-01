@@ -5,4 +5,5 @@ INSERT INTO `items` (`name`, `label`, `limit`) VALUES
 	('trout', 'Trout', 20),
 	('salmon', 'Salmon', 20),
 	('tuna', 'Tuna', 40)
+	('shark', 'Shark', 4)
 ;
