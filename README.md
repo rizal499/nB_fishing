@@ -17,7 +17,7 @@ ESX fishing script with reward shark and sell it to black money
 - Fully configurable fish buyer to sell fish
 
 ## Dependencies
-- es_extended
+- es_extended -esx-lgacy - https://github.com/esx-framework/esx-legacy
 - ox_lib - https://github.com/overextended/ox_lib/releases
 - danny3_outlawalert
 
